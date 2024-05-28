@@ -1,11 +1,12 @@
 import moment from "moment";
-const fechaCumple = document.querySelector("#fecha_nacimiento");
+const fechaCumple = document.querySelector("#fecha_cumple");
 const boton = document.querySelector("#boton_cumple");
 const resultado = document.querySelector("#resultado");
 
-function calculadoraEdad(fecha) {
+// Funcion que en base a una fecha calcule la cantidad de años hasta el dia actual
+function calcularEdad(fecha) {
   const fechaActual = moment();
-  const fechaCumple = moment(
+  const fecha_cumple = moment(
     fecha,
     "YYYY-MM-DD"
   ); /* le puedo dar el formato que quiera*/
@@ -15,5 +16,5 @@ function calculadoraEdad(fecha) {
 }
 
 boton.addEventListener("click", () => {
-  resultado.innerText = calculadoraEdad(fechaCumple.value);
+  resultado.innerText = calcularEdad(fechaCumple.value);
 });
